@@ -9,10 +9,10 @@ import java.util.List;
  * @author Michael Spitsin
  * @since 2016-12-04
  */
-public final class Measurements implements Measurement, Iterable<Measurement> {
-    private final Collection<Measurement> measurements;
+public final class Measurements implements Measurement {
+    private final Collection<? extends Measurement> measurements;
 
-    public Measurements(Collection<Measurement> measurements) {
+    public Measurements(Collection<? extends Measurement> measurements) {
         this.measurements = measurements;
     }
 
@@ -23,10 +23,5 @@ public final class Measurements implements Measurement, Iterable<Measurement> {
             measureResults.add(measurement.measure());
         }
         return new MeasureResults(measureResults);
-    }
-
-    @Override
-    public Iterator<Measurement> iterator() {
-        return measurements.iterator();
     }
 }
