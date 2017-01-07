@@ -1,4 +1,4 @@
-package com.github.programmerr47.forloopsperformance;
+package com.github.programmerr47.measurement;
 
 import org.junit.Test;
 
