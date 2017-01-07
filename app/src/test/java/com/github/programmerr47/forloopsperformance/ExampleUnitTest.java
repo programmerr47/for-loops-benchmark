@@ -1,4 +1,3 @@
-package com.github.programmerr47.forloopsperformance;
 
 import com.github.programmerr47.tapeline.Measurements;
 import com.github.programmerr47.tapeline.TimeMeasurement;
