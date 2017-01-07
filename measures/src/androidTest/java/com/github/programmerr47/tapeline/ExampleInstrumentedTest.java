@@ -1,4 +1,4 @@
-package com.github.programmerr47.measurement;
+package com.github.programmerr47.tapeline;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.github.programmerr47.measurement.test", appContext.getPackageName());
+        assertEquals("com.github.programmerr47.tapeline.test", appContext.getPackageName());
     }
 }

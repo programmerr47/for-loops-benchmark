@@ -1,4 +1,4 @@
-package com.github.programmerr47.measurement;
+package com.github.programmerr47.tapeline;
 
 import org.junit.Test;
 
