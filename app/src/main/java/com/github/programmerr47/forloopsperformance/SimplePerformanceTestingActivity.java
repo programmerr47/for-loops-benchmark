@@ -11,7 +11,7 @@ import java.util.List;
 import static com.github.programmerr47.forloopsperformance.SimpleMeasureFunctions.measureAvgTime;
 import static com.github.programmerr47.forloopsperformance.SimpleMeasureFunctions.rndStringList;
 
-public class MainActivity extends AppCompatActivity {
+public class SimplePerformanceTestingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

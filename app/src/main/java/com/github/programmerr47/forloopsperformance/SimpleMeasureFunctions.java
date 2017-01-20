@@ -24,6 +24,14 @@ public class SimpleMeasureFunctions {
         return result;
     }
 
+    public static ArrayList<Integer> rndIntList(int size) {
+        ArrayList<Integer> result = new ArrayList<>(size);
+        for (int i = 0; i < size; i++) {
+            result.add(rnd.nextInt());
+        }
+        return result;
+    }
+
     private static String rndString() {
         return String.valueOf(rnd.nextInt());
     }
@@ -52,6 +60,26 @@ public class SimpleMeasureFunctions {
 //        System.out.println(output);
         Log.v("Test Loops Time", output.toString());
         return avgResult / attempts;
+    }
+
+    public static long measureAvgTimeEdgeCutOff(Runnable action, int attempts) {
+        StringBuilder output = new StringBuilder("Attempts: ");
+        long avgResult = 0;
+        long max = 0;
+        long min = Long.MAX_VALUE;
+        for (int i = 0; i < attempts; i++) {
+            long result = measureTime(action);
+            avgResult += result;
+
+            if (result < min) min = result;
+            if (result > max) max = result;
+
+            output.append(result + " ");
+        }
+
+//        System.out.println(output);
+        Log.v("Test Loops Time", output.toString());
+        return (avgResult - min - max) / (attempts - 2);
     }
 
     public static long measureTime(Runnable action) {
