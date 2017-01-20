@@ -18,7 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        for (int i = 0; i < 2000; i += 100) {
+        measureForTime(0, 30000, 1000);
+    }
+
+    private void measureForTime(int start, int end, int step) {
+        for (int i = start; i < end; i += step) {
             final List<String> rndStringList = rndStringList(i);
 
             long[] measures = measureAvgTime(() -> {
@@ -38,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            Log.v("Test Loops Time", Arrays.toString(measures));
-            System.out.println(Arrays.toString(measures));
+            Log.v("Test Loops Time", i + ": " + Arrays.toString(measures));
         }
     }
 }

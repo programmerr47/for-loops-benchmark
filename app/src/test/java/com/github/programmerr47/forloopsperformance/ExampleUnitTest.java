@@ -24,8 +24,16 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void test() {
-        for (int i = 0; i < 27000; i += 3000) {
+    public void generalTest() {
+        measureForTime(0, 30000, 1000);
+    }
+
+    public void detailTestForOneSample() {
+        measureForTime(15000, 16000, 1000);
+    }
+
+    private void measureForTime(int start, int end, int step) {
+        for (int i = start; i < end; i += step) {
             final List<String> rndStringList = rndStringList(i);
 
             long[] measures = measureAvgTime(() -> {
@@ -45,7 +53,7 @@ public class ExampleUnitTest {
                 }
             });
 
-            System.out.println(Arrays.toString(measures));
+            System.out.println(i + ": " + Arrays.toString(measures));
         }
     }
 }

@@ -1,6 +1,9 @@
 package com.github.programmerr47.forloopsperformance;
 
+import android.util.Log;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -34,18 +37,20 @@ public class SimpleMeasureFunctions {
     }
 
     public static long measureAvgTime(Runnable action) {
-        return measureAvgTime(action, 15);
+        return measureAvgTime(action, 5);
     }
 
     public static long measureAvgTime(Runnable action, int attempts) {
-//        System.out.println("measure action");
+        StringBuilder output = new StringBuilder("Attempts: ");
         long avgResult = 0;
         for (int i = 0; i < attempts; i++) {
             long result = measureTime(action);
             avgResult += result;
-//            System.out.println("Attempt " + i + ": " + result);
+            output.append(result + " ");
         }
 
+//        System.out.println(output);
+        Log.v("Test Loops Time", output.toString());
         return avgResult / attempts;
     }
 
