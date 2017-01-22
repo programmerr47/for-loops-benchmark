@@ -27,7 +27,8 @@ public class SimplePerformanceTestingActivity extends AppCompatActivity {
 
             long[] measures = measureAvgTime(() -> {
                 String sum = "";
-                for (int index = 0; index < rndStringList.size(); index++) {
+                int size = rndStringList.size();
+                for (int index = 0; index < size; index++) {
                     sum += rndStringList.get(index);
                 }
             }, () -> {
